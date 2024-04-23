@@ -1,0 +1,29 @@
+.errorMessage {
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    text-align: center;
+    margin: 40px 30px;
+}
+
+.reviewInfo {
+    margin: 30px;
+    border-bottom: 1px solid #b6b2b2;
+}
+
+.reviewAuthor {
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.reviewText {
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    color: #b6b2b2;
+    margin-bottom: 20px;
+}
+

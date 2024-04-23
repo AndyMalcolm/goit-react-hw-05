@@ -1,0 +1,33 @@
+.movieList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    row-gap: 45px;
+    margin: 40px 25px;
+}
+
+.movieCard {
+    transition: transform .3s;
+    width: 250px;
+}
+
+.movieCard:hover,
+.movieCard:focus {
+    transform: scale(1.05);
+}
+
+.image {
+    border-radius: 10px;
+}
+
+.movieTitle { 
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    color: #ffffff;
+    margin-top: 10px;
+    text-align: center;
+}
+
+
