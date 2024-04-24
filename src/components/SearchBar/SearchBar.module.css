@@ -9,11 +9,11 @@
 .inputSearch {
     width: 340px;
     font-size: 18px;
-    border: 2px solid #414141;
+    border: 2px solid #d2ba00;
     border-radius: 5px;
     background-color: #5e0025;
     padding: 5px 10px;
-    color:#000000;
+    color:#d2ba00;
 }
 
 .btnSearch {
@@ -25,7 +25,6 @@
     font-size: 18px;
     font-weight: 600;
     letter-spacing: 1px;
-    /* border: 2px solid #000000 */
 }
 
 .btnSearch:hover {
