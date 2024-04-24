@@ -1,12 +1,12 @@
 .title {
     font-size: 60px;
     letter-spacing: 2.5px;
-    color: #ffffff;
+    color: #d2ba00;
     text-align: center;
     padding-top: 40px;
 }
 .errorMessage {
-    color: #ffffff;
+    color: #d2ba00;
     font-size: 22px;
     font-weight: 500;
     letter-spacing: 0.8px;
