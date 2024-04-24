@@ -11,11 +11,11 @@
 }
 
 .goBack {
-    background-color: #747373;
+    background-color: #5e0025;
     padding: 15px 20px;
     border-radius: 8px;
     transition: all 0.3s ease;
-    color: #ffffff;
+    color: #d2ba00;
     font-size: 18px;
     font-weight: 600;
     letter-spacing: 1px;
@@ -25,15 +25,15 @@
 
 .goBack:hover {
     transform: translateY(2px);
-    box-shadow: 0px 0px 6px 3px rgba(255, 255, 255, 1);
+    box-shadow: 0px 0px 6px 3px rgb(250, 224, 52);
 }
 
 .castReviewBtn {
-    background-color: #747373;
+    background-color: #5e0025;
     padding: 15px 20px;
     border-radius: 8px;
     transition: all 0.3s ease;
-    color: #ffffff;
+    color: #d2ba00;
     font-size: 18px;
     font-weight: 600;
     letter-spacing: 1px;
