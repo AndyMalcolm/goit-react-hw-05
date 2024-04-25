@@ -1,56 +1,51 @@
 import { useEffect, useState } from "react";
-import css from "./MoviesPage.module.css";
-import { fetchSearchMovies } from "../../services/apiSearchMovies.js";
+import SearchBar from "../../components/SearchBar/SearchBar";
 import MovieList from "../../components/MovieList/MovieList";
+import { fetchMoviesBySearch } from "../../api/api";
 import { useSearchParams } from "react-router-dom";
+import Loader from "../../components/Loader/Loader";
+import css from "./MoviesPage.module.css";
 
 const MoviesPage = () => {
-	const [value, setValue] = useState("");
-	const [films, setfilms] = useState([]);
-	// const [query, setQuery] = useState("");
-	const [searchParams, setSearchParams] = useSearchParams();
-	const query = searchParams.get("query");
+  const [loading, setLoading] = useState(false);
+  const [movieItems, setMovieItems] = useState([]);
 
-	const handleSubmit = event => {
-		event.preventDefault();
-		// setQuery(value);
-		setSearchParams({ query: value });
-	};
+  const [searchParams, setSearchParams] = useSearchParams();
 
-	const handleChange = event => {
-		setValue(event.target.value);
-	};
+  const handleSearchFormSubmit = (query) => {
+    if (!query) {
+      return;
+    }
+    setSearchParams({ search: query });
+  };
 
-	useEffect(() => {
-		if (!query) return;
-		async function fetchMovies() {
-			try {
-				const response = await fetchSearchMovies(query);
-				setfilms(response.results);
-			} catch (error) {
-				console.log(error);
-			}
-		}
-		fetchMovies();
-	}, [query]);
+  useEffect(() => {
+    const value = searchParams.get("search");
+    if (!value) return;
 
-	return (
-		<div>
-			<form onSubmit={handleSubmit} className={css.SearchForm}>
-				<input
-					className={css.SearchFormInput}
-					onChange={handleChange}
-					type="text"
-					autoComplete="off"
-					autoFocus
-				/>
-				<button className={css.SearchFormButton} type="submit">
-					Search
-				</button>
-			</form>
-			<MovieList movies={films} />
-		</div>
-	);
+    async function getSearchMovies() {
+      try {
+        setLoading(true);
+        const searchMovies = await fetchMoviesBySearch(value);
+        setMovieItems(searchMovies);
+      } catch (error) {
+        return { error: "Oops! Something went wrong! Please reload the page!" };
+      } finally {
+        setLoading(false);
+      }
+    }
+    getSearchMovies();
+  }, [searchParams]);
+
+  return (
+    <div className={css.moviesPage}>
+      {loading && <Loader />}
+
+      <SearchBar onSubmit={handleSearchFormSubmit} />
+
+      {searchParams && <MovieList items={movieItems} />}
+    </div>
+  );
 };
 
 export default MoviesPage;

@@ -1,14 +1,15 @@
 import { Link } from "react-router-dom";
-import css from "./NotFoundPage.module.css";
+// import css from "./NotFoundPage.module.css";
 
 const NotFoundPage = () => {
-	return (
-		<div className={css.box}>
-			<div>404</div>
-			<div>Not Found Page</div>
-			<Link to="/">Back Home</Link>
-		</div>
-	);
+  return (
+    <div>
+      <p>The page you are looking for does not exist</p>
+      <button>
+        <Link to="/">Go home</Link>
+      </button>
+    </div>
+  );
 };
 
 export default NotFoundPage;

@@ -1,10 +1,33 @@
-.list {
-	list-style: none;
-	padding: 8px;
+.movieList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    row-gap: 45px;
+    margin: 40px 25px;
 }
 
-.itemLink {
-	text-decoration: none;
-	font-size: 20px;
-	color: darkblue;
+.movieCard {
+    transition: transform .3s;
+    width: 250px;
 }
+
+.movieCard:hover,
+.movieCard:focus {
+    transform: scale(1.05);
+}
+
+.image {
+    border-radius: 10px;
+}
+
+.movieTitle { 
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    color: #d2ba00;
+    margin-top: 10px;
+    text-align: center;
+}
+
+
